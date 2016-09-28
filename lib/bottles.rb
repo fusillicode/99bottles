@@ -1,4 +1,12 @@
 class Bottles
+  def song
+    verses 99, 0
+  end
+
+  def verses from, to
+    from.downto(to).map { |bottles| verse bottles }.join "\n"
+  end
+
   def verse bottles
     if bottles == 2
       "#{bottles} bottles of beer on the wall, #{bottles} bottles of beer.
@@ -17,13 +25,5 @@ Go to the store and buy some more, 99 bottles of beer on the wall.
 Take one down and pass it around, #{bottles - 1} bottles of beer on the wall.
 "
     end
-  end
-
-  def verses from, to
-    from.downto(to).map { |bottles| verse bottles }.join "\n"
-  end
-
-  def song
-    verses 99, 0
   end
 end
